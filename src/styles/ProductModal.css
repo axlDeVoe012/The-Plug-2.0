@@ -1,0 +1,212 @@
+/* Base variables for consistent styling */
+:root {
+  --primary-accent: #00ffaa;
+  --secondary-accent: #ffcc00;
+  --dark-bg: #212121;
+  --darker-bg: #111;
+  --text-light: #ccc;
+  --modal-shadow: 0 20px 40px rgba(0, 255, 153, 0.3);
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+}
+
+/* Modal overlay styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  opacity: 0;
+  animation: fadeIn var(--transition-medium) forwards;
+}
+
+/* Compact modal content */
+.modal-content {
+  background-color: var(--dark-bg);
+  border-radius: clamp(0.75rem, 2vw, 1rem);
+  box-shadow: var(--modal-shadow);
+  width: min(90vw, 500px);
+  max-height: 90vh;
+  padding: clamp(1rem, 2vw, 1.25rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.5rem, 1.5vw, 0.75rem);
+  position: relative;
+  animation: scaleUp var(--transition-medium) forwards;
+  border: 1px solid rgba(0, 255, 170, 0.1);
+  transform-origin: center;
+}
+
+/* Custom close button */
+.btn-close {
+  position: absolute;
+  top: clamp(0.5rem, 1.5vw, 0.75rem);
+  right: clamp(0.5rem, 1.5vw, 0.75rem);
+  width: clamp(1.25rem, 4vw, 1.75rem);
+  height: clamp(1.25rem, 4vw, 1.75rem);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  filter: drop-shadow(0 0 4px var(--primary-accent));
+  transition: all var(--transition-fast);
+  z-index: 1;
+}
+
+.btn-close::before,
+.btn-close::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 0.125rem;
+  background-color: var(--primary-accent);
+  transform-origin: center;
+}
+
+.btn-close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.btn-close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.btn-close:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px var(--primary-accent));
+}
+
+/* Modal title */
+.modal-title {
+  font-size: clamp(1.1rem, 4vw, 1.5rem);
+  font-weight: 700;
+  color: var(--primary-accent);
+  margin: 0.25rem 0;
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* Main image container */
+.modal-main-image-container {
+  width: 100%;
+  aspect-ratio: 1/1;
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--darker-bg);
+  border-radius: clamp(0.5rem, 1.5vw, 0.75rem);
+  overflow: hidden;
+}
+
+.modal-main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform var(--transition-medium);
+}
+
+.modal-main-image:hover {
+  transform: scale(1.02);
+}
+
+/* Thumbnail gallery */
+.modal-thumbnails {
+  display: flex;
+  gap: clamp(0.4rem, 1.5vw, 0.6rem);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0.25rem 0;
+}
+
+.modal-thumbnail {
+  width: clamp(40px, 10vw, 60px);
+  height: clamp(40px, 10vw, 60px);
+  object-fit: cover;
+  border-radius: clamp(0.25rem, 0.8vw, 0.4rem);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+.modal-thumbnail:hover {
+  transform: scale(1.1);
+  border-color: var(--primary-accent);
+}
+
+.modal-thumbnail.selected {
+  border-color: var(--primary-accent);
+  transform: scale(1.15);
+  box-shadow: 0 0 10px rgba(0, 255, 170, 0.5);
+}
+
+/* Content text */
+.modal-description {
+  color: var(--text-light);
+  font-size: clamp(0.8rem, 2.5vw, 0.95rem);
+  line-height: 1.5;
+  text-align: center;
+  margin: 0.25rem 0;
+}
+
+.modal-price {
+  font-size: clamp(1rem, 3.5vw, 1.2rem);
+  font-weight: 700;
+  color: var(--secondary-accent);
+  text-align: center;
+  margin: 0.25rem 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.95); }
+  to { transform: scale(1); }
+}
+
+/* Large screen adjustments (>1200px) */
+@media (min-width: 1200px) {
+  .modal-content {
+    width: min(50vw, 450px);
+    padding: 1rem;
+  }
+  
+  .modal-main-image-container {
+    max-width: 350px;
+  }
+  
+  .modal-thumbnails {
+    gap: 0.5rem;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .modal-main-image-container {
+    aspect-ratio: 4/5;
+  }
+  
+  .modal-content {
+    padding: 0.75rem;
+  }
+}
+
+/* Accessibility focus states */
+button:focus-visible,
+.modal-thumbnail:focus-visible {
+  outline: 2px solid var(--primary-accent);
+  outline-offset: 2px;
+}

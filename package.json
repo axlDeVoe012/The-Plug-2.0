@@ -1,0 +1,29 @@
+{
+  "name": "the-plug-website",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@fortawesome/fontawesome-free": "^7.0.0",
+    "@tailwindcss/vite": "^4.1.11",
+    "@vercel/analytics": "^1.5.0",
+    "bootstrap": "^5.3.7",
+    "motion": "^12.23.12",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^6.30.1",
+    "swiper": "^11.2.10",
+    "tailwindcss": "^4.1.11"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^7.0.6"
+  }
+}

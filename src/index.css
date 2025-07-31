@@ -1,0 +1,11 @@
+
+body {
+    
+  -webkit-text-size-adjust: 100%; /* iOS Safari */
+  text-size-adjust: 100%;         /* Modern browsers */
+}
+th {
+  text-align: match-parent;       /* Standard (Safari 15.4+ support) */
+  text-align: -webkit-match-parent; /* Older WebKit browsers */
+}
+

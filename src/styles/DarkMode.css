@@ -1,0 +1,138 @@
+/* src/styles/darkMode.css */
+
+/* Dark mode base styles */
+body.dark-mode {
+  background-color: #121212 !important;
+  color: #eee !important;
+}
+
+/* Navbar overrides */
+body.dark-mode .navbar {
+  background-color: #1e1e1e !important;
+}
+
+body.dark-mode .navbar .nav-link {
+  color: #aaa !important;
+}
+
+body.dark-mode .navbar .nav-link:hover,
+body.dark-mode .navbar .nav-link.active {
+  color: #00ffaa !important;
+}
+
+/* Dark mode button */
+body.dark-mode .btn-outline-light {
+  color: #00ffaa !important;
+  border-color: #00ffaa !important;
+}
+
+body.dark-mode .btn-outline-light:hover,
+body.dark-mode .btn-outline-light:focus {
+  background-color: #00ffaa !important;
+  color: #121212 !important;
+  border-color: #00ffaa !important;
+}
+
+/* Products container */
+body.dark-mode #product-container {
+  background-color: #121212 !important;
+}
+
+body.dark-mode .name {
+  color: whitesmoke !important;
+}
+
+body.dark-mode .pricing-section {
+  background-color: #121212;
+}
+
+body.dark-mode #about {
+  background-color: #121212;
+}
+
+/* Optional: Dark mode toggle styling to match neon theme */
+body.dark-mode .dark_mode_label {
+  background-color: #030303;
+}
+
+body.dark-mode .dark_mode_label:after {
+  background: linear-gradient(180deg, #00ffaa, #00cc99);
+}
+
+.text-muted.dark-mode{
+  color: #ffffff !important;
+}
+.mb-4.dark-mode{
+  background-color: #aaa !important;
+}
+#article{
+  background-color: #aaa;
+}
+body.dark-mode .articles-container{
+  background-color: #181717 !important;
+  border-radius: 5rem;
+}
+
+body.dark-mode h1
+{
+  color: rgb(247, 247, 247);
+
+}
+
+body.dark-mode .article-card{
+    background-color: #2e2e2e;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow:
+      0 0 15px rgba(5, 226, 24, 0.4),
+      0 0 30px rgba(2, 46, 2, 0.3),
+      inset 0 1px 3px rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode p
+{
+  color: rgb(228, 228, 228);
+
+}
+
+body.dark-mode h3
+{
+  color: rgb(228, 228, 228);
+
+}
+
+body.dark-mode .contact-container{
+  background-color: #0e0d0d;
+}
+
+body.dark-mode .muted
+{
+  color: rgb(220, 236, 217);
+
+}
+
+body.dark-mode .container-serv{
+  background-color: #0e0d0d;
+}
+
+body.dark-mode #serv{
+  background: linear-gradient(135deg, #0e0d0d, #0e0d0d);
+}
+
+body.dark-mode .about-theplug{
+    background-color:rgba(13, 14, 13, 0.3);
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow:
+      0 0 15px rgba(144, 144, 145, 0.4),
+      0 0 30px rgba(1, 80, 8, 0.767),
+      inset 0 1px 3px rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode .education-container{
+  background-color: #111111;
+}
+
+body.dark-mode footer{
+  background-color: #0e0e0e !important;
+}

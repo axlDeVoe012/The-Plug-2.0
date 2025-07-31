@@ -1,0 +1,188 @@
+
+.pricing-section {
+  background-color: #022c22;
+  padding: 4rem 1rem;
+  font-family: 'Inter', sans-serif;
+  color: #e8fdf5;
+  text-align: center;
+  text-align: -webkit-center;
+}
+
+.pricing-section h2 {
+  font-size: 2.5rem;
+  color: #a7f3d0;
+  font-weight: 700;
+}
+
+.pricing-section .lead {
+  color: #6ee7b7;
+  font-size: 1.1rem;
+}
+
+/* ===== Card Base ===== */
+.pricing-card {
+  border-radius: 1rem;
+  padding: 2rem;
+  min-height: 480px;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 0 15px rgba(34, 197, 94, 0.4),
+    0 0 30px rgba(34, 197, 94, 0.3),
+    inset 0 1px 3px rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px); /* Safari 9+ */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #d1fae5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: fadeIn 0.6s ease-in-out both;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pricing-card:hover {
+  transform: scale(1.02);
+}
+
+/* ===== Background Shine Animation ===== */
+.pricing-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+  transform: rotate(25deg);
+  animation: shineSweep 4s ease-in-out infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.pricing-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== Card Color Variants ===== */
+.blue-card {
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+}
+
+.black-card {
+  background: linear-gradient(135deg, #111827, #1f2937);
+}
+
+.green-card {
+  background: linear-gradient(135deg, #064e3b, #065f46);
+}
+
+/* ===== Titles & Subtitles ===== */
+.pricing-card h4 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #a7f3d0;
+  margin-bottom: 0.4rem;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 1rem auto;
+  width: 60%;
+}
+
+/* ===== List Styles ===== */
+.pricing-card ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1rem;
+  text-align: left;
+  text-align: -webkit-left;
+}
+
+.pricing-card li {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.pricing-card li strong {
+  color: #bbf7d0;
+}
+
+.pricing-card li.subheading {
+  font-weight: 600;
+  margin-top: 1rem;
+  color: #6ee7b7;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+/* ===== Coming Soon Badge ===== */
+.coming-soon-tag {
+  font-size: 0.85rem;
+  background: #f87171;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* ===== Animations ===== */
+@keyframes shineSweep {
+  0% {
+    transform: translateX(-100%) rotate(25deg);
+  }
+  50% {
+    transform: translateX(100%) rotate(25deg);
+  }
+  100% {
+    transform: translateX(-100%) rotate(25deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsive Grid Adjustments ===== */
+@media (max-width: 992px) {
+  .pricing-card {
+    margin-bottom: 2rem;
+  }
+
+  .pricing-section h2 {
+    font-size: 2rem;
+  }
+
+  .pricing-card h4 {
+    font-size: 1.4rem;
+  }
+}

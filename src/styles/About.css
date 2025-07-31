@@ -1,0 +1,90 @@
+/* About.css — Dark Green Corporate Cannabis Theme */
+
+
+.about-container {
+  background-color: #102d20; /* deep green */
+  padding: 2rem 2.5rem;
+  border-radius: 2rem;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  color: #e6f4e8;
+  box-shadow: 0 0 20px rgba(0, 80, 40, 0.08);
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.about-container h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #a0f0c5; /* mint accent */
+  margin-bottom: 0.5rem;
+}
+
+.about-container h4 {
+  font-size: 1.25rem;
+  color: #b3ecca;
+  border-left: 4px solid #34d399;
+  padding-left: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.about-container p,
+.about-container li {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #d2efe0;
+}
+
+.about-container ul {
+  padding-left: 1.5rem;
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+.about-container .text-muted {
+  font-style: italic;
+  color: #8cc2a3;
+}
+
+.about-container section {
+  background: #1a3b2e;
+  border: 1px solid #2f5e4d;
+  padding: 1.25rem 1.5rem;
+  border-radius: 0.75rem;
+  margin-bottom: 1.75rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.about-container section:hover {
+  box-shadow: 0 4px 14px rgba(0, 128, 0, 0.08);
+}
+
+img.animated-leaf {
+  height: 60px;
+  animation: floatLeaf 3s ease-in-out infinite;
+  transform-origin: center;
+  filter: drop-shadow(0 0 3px #a0f0c5);
+  margin-bottom: 0.75rem;
+}
+
+/* Floating leaf animation */
+@keyframes floatLeaf {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(-4deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 1.5rem;
+  }
+
+  .about-container h1 {
+    font-size: 2rem;
+  }
+
+  .about-container h4 {
+    font-size: 1.1rem;
+  }
+}

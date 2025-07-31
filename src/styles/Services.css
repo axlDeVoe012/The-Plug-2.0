@@ -1,0 +1,250 @@
+:root {
+  --primary-color: #28a745;
+  --primary-hover: #35d957;
+  --text-color: #e1e1e1;
+  --light-text: #b0b0b0;
+  --bg-color: #0e0f11; /* fallback bg */
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --transition: all 0.3s ease;
+  --card-bg: #141414; /* Dark card background */
+  --accent-yellow: #ff0707;
+  --coming-soon-bg: #2d2424; /* Slightly lighter than card-bg */
+}
+
+/* === Dark Linear Gradient Background === */
+.services-section {
+  padding: 3rem 0;
+  background: linear-gradient(135deg, #070f04, #133501);
+  color: var(--text-color);
+  border-radius: 2rem;
+}
+
+/* Container remains the same */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-subtitle {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 2rem;
+  margin: 0;
+  color: var(--primary-hover);
+}
+
+/* Grid stays the same */
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+/* === Updated Service Card === */
+.service-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+  border: 1px solid rgb(1, 39, 1);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* === Carousel === */
+.service-carousel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
+.carousel {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.carousel img:hover {
+  transform: scale(1.03);
+  filter: brightness(1.05) saturate(1.1);
+}
+
+/* === Swiper Navigation Buttons === */
+.swiper-button-prev,
+.swiper-button-next {
+  color: white;
+  background: rgba(40, 167, 70, 0);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background: rgba(131, 131, 131, 0);
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 1.2rem;
+}
+
+/* === Text Content === */
+.service-text {
+  padding: 1.5rem;
+}
+
+.service-text h5 {
+  font-size: 1.25rem;
+  margin: 0 0 1rem 0;
+  color: var(--text-color);
+}
+
+.service-text p {
+  color: var(--light-text);
+  margin: 0 0 1rem 0;
+  line-height: 1.6;
+}
+
+.extra-text {
+  font-style: italic;
+  color: var(--primary-color) !important;
+}
+
+/* === Coming Soon === */
+.coming-soon-tag {
+  display: inline-block;
+  background-color: var(--accent-yellow);
+  color: #000;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+.coming-soon-card {
+  opacity: 0.95;
+  background-color: var(--coming-soon-bg);
+  border-left: 4px solid var(--accent-yellow);
+}
+
+.coming-soon-card .service-text h5 {
+  color: var(--light-text);
+}
+
+/* === CTA Button === */
+.cta-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #ff4081;
+  color: white;
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid #ff4081;
+}
+
+.cta-button:hover {
+  background-color: #133501;
+  color: #6acbe4;
+  border-color: #20ab01;
+}
+
+
+/* === Reverse Layout === */
+.service-card.reverse {
+  flex-direction: column-reverse;
+}
+
+/* === Responsive === */
+@media (min-width: 768px) {
+  .service-card {
+    flex-direction: row;
+  }
+
+  .service-card.reverse {
+    flex-direction: row-reverse;
+  }
+
+  .service-carousel {
+    flex: 1;
+    min-width: 50%;
+  }
+
+  .service-text {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .services-grid {
+    gap: 3rem;
+  }
+
+  .service-text h5 {
+    font-size: 1.5rem;
+  }
+}
+
+/* === Accessibility === */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 3px;
+}
+
+/* === Reduced Motion === */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
